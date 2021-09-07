@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         setContentView(R.layout.activity_main);
 
         init();
-        createSpinner();
+        createSpinner(sp2, stu);
+        createSpinner(sp1, sortBy);
+        createSpinner(spStu, stu1);
         setClick();
     }
 
@@ -216,21 +218,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         layout.setVisibility(View.GONE);
     }
 
-    private void createSpinner(){
+    private void createSpinner(Spinner sp2, String[] stu){
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, stu);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp2.setAdapter(adapter);
-
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, stu1);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spStu.setAdapter(adapter2);
-
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, sortBy);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp1.setAdapter(adapter1);
     }
 
     @Override
